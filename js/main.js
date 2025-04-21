@@ -1,0 +1,194 @@
+// Mobile menu functionality
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+const body = document.body;
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    body.classList.toggle('menu-open');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (event) => {
+    const isClickInsideNav = event.target.closest('.nav');
+    if (!isClickInsideNav && navLinks.classList.contains('active')) {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        body.classList.remove('menu-open');
+    }
+});
+
+// Close mobile menu when clicking on a link
+navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        body.classList.remove('menu-open');
+    });
+});
+
+// Modal functionality
+// const modal = document.getElementById('modal');
+const requestBtn = document.getElementById('requestBtn');
+const closeBtn = document.querySelector('.close');
+
+requestBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Form submissions
+// const contactForm = document.getElementById('contactForm');
+// const requestForm = document.getElementById('requestForm');
+
+// contactForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     // Here you would typically send the form data to your server
+//     alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+//     contactForm.reset();
+// });
+
+// requestForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     // Here you would typically send the form data to your server
+//     alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+//     requestForm.reset();
+//     modal.style.display = 'none';
+// });
+
+// // Smooth scrolling for navigation links
+// document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+//     anchor.addEventListener('click', function (e) {
+//         const href = this.getAttribute('href');
+
+//         if (href === '#' || href === '') return; // игнорируем пустые якоря
+
+//         e.preventDefault();
+//         const target = document.querySelector(href);
+//         if (target) {
+//             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//         }
+//     });
+// });
+const requestForm = document.getElementById('requestForm');
+const modal = document.getElementById('modal');
+
+requestForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(requestForm);
+
+  try {
+    const response = await fetch('send.php', {
+      method: 'POST',
+      body: formData
+    });
+
+    const result = await response.json();
+
+    if (result.status === 'success') {
+      document.querySelector('.modal-content').innerHTML = `
+        <h2>Спасибо!</h2>
+        <p>Ваша заявка успешно отправлена.<br>Мы свяжемся с вами в ближайшее время.</p>
+        <button class="btn close-modal">Закрыть</button>
+      `;
+    } else {
+      alert('Ошибка: ' + result.message);
+    }
+  } catch (error) {
+    alert('Произошла ошибка при отправке формы.');
+  }
+});
+
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('close-modal') || e.target.classList.contains('close')) {
+    modal.style.display = 'none';
+  }
+});
+
+// Header scroll effect
+const header = document.querySelector('.header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        header.style.transform = 'translateY(-100%)';
+    } else {
+        header.style.transform = 'translateY(0)';
+    }
+
+    lastScroll = currentScroll;
+});
+// FAQ functionality
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach((item) => {
+    const question = item.querySelector('.faq-question');
+
+    question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Close all FAQ items
+        faqItems.forEach((faqItem) => {
+            faqItem.classList.remove('active');
+        });
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+const toTopBtn = document.getElementById('toTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        toTopBtn.classList.add('show');
+    } else {
+        toTopBtn.classList.remove('show');
+    }
+});
+
+toTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+});
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+        delay: 5000, // Время между слайдами (в мс)
+        disableOnInteraction: false, // не отключать после ручного переключения
+    },
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+});

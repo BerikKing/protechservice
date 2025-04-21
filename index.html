@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ProTechService - Сервис лабораторного оборудования</title>
+        <link rel="stylesheet" href="./style/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="#header" class="logo"
+                        ><img src="./img/logo-black.png" alt="logo" />ProTechService</a
+                    >
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                    <ul class="nav-links">
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#equipment">Оборудование</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero" id="header">
+                <div class="container">
+                    <h1>Профессиональный сервис лабораторного оборудования</h1>
+                    <h2>Ремонт, обслуживание и пуско-наладка оборудования любой сложности</h2>
+                    <p>
+                        Мы обеспечиваем полный цикл обслуживания лабораторного оборудования с
+                        гарантией качества и соблюдением всех технических стандартов.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn primary" id="requestBtn">Оставить заявку</button>
+                        <button class="btn secondary" id="learnMoreBtn">Узнать больше</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="advantages">
+                <div class="container">
+                    <h2>Наши преимущества</h2>
+                    <div class="advantages-grid">
+                        <div class="advantage-card">
+                            <i class="fas fa-user-graduate"></i>
+                            <h3>Квалифицированные инженеры</h3>
+                            <p>Опытные специалисты с профильным образованием</p>
+                        </div>
+                        <div class="advantage-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Оперативные сроки</h3>
+                            <p>Быстрое реагирование и выполнение работ</p>
+                        </div>
+                        <div class="advantage-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Гарантия на работы</h3>
+                            <p>Предоставляем гарантию на все виды работ</p>
+                        </div>
+                        <div class="advantage-card">
+                            <i class="fas fa-star"></i>
+                            <h3>Ведущие бренды</h3>
+                            <p>Работаем с оборудованием мировых производителей</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="services">
+                <div class="container">
+                    <h2>Услуги</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <i class="fas fa-search"></i>
+                            <h3>Диагностика оборудования</h3>
+                            <p>Комплексная проверка и выявление неисправностей</p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-tools"></i>
+                            <h3>Ремонт любой сложности</h3>
+                            <p>Устранение неисправностей с использованием оригинальных запчастей</p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-cogs"></i>
+                            <h3>Пуско-наладочные работы</h3>
+                            <p>Установка и настройка нового оборудования</p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h3>Профилактическое обслуживание</h3>
+                            <p>Регулярное обслуживание для предотвращения поломок</p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-sync"></i>
+                            <h3>Модернизация оборудования</h3>
+                            <p>Обновление и улучшение существующего оборудования</p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <h3>Обучение персонала</h3>
+                            <p>Подготовка специалистов к работе с оборудованием</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="equipment" class="equipment">
+                <div class="container">
+                    <h2>Оборудование</h2>
+                    <div class="equipment-grid">
+                        <div class="equipment-types">
+                            <h3 class="title">Типы оборудования</h3>
+                            <div class="equipment-items">
+                                <div class="equipment-item">
+                                    <img
+                                        src="./img/centryfuga.jpeg"
+                                        alt="Центрифуга"
+                                        class="equipment-image" />
+                                    <h4>Центрифуги</h4>
+                                </div>
+                                <div class="equipment-item">
+                                    <img
+                                        src="./img/cpectr.jpeg"
+                                        alt="Спектрофотометр"
+                                        class="equipment-image" />
+                                    <h4>Спектрофотометры</h4>
+                                </div>
+                                <div class="equipment-item">
+                                    <img
+                                        src="./img/chromograph.jpg"
+                                        alt="Хроматограф"
+                                        class="equipment-image" />
+                                    <h4>Хроматографы</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-brands">
+                            <h3 class="title">Бренды</h3>
+                            <div class="brands-grid">
+                                <div class="brand">
+                                    <img src="./img/brend/thermo.png" alt="Thermo Fisher" />
+                                </div>
+                                <div class="brand">
+                                    <img src="./img/brend/sartorius.jpeg" alt="Sartorius" />
+                                </div>
+                                <div class="brand">
+                                    <img
+                                        src="./img/brend/mettler-toledo.png"
+                                        alt="Mettler Toledo" />
+                                </div>
+                                <div class="brand">
+                                    <img src="./img/brend/binder.png" alt="BINDER" />
+                                </div>
+                                <div class="brand">
+                                    <img src="./img/brend/eppendorf.png" alt="eppendorf" />
+                                </div>
+                                <div class="brand">
+                                    <img src="./img/brend/agilent.png" alt="Agilent" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <div class="container">
+                    <h2>О компании</h2>
+                    <h4 class="about_decsr">
+                        <span>ProTechService</span> — квалифицированные инженеры с более чем
+                        10-летним опытом в сфере обслуживания и ремонта лабораторного оборудования.
+                        Мы помогаем медицинским, научным, производственным и образовательным
+                        учреждениям поддерживать оборудование в рабочем состоянии и достигать
+                        точности в исследованиях и производстве. <br /><br />
+                        Наш приоритет — надежность, качество и персональный подход к каждому
+                        клиенту. Мы не просто ремонтируем — мы создаём условия, при которых ваше
+                        оборудование работает стабильно и эффективно.
+                    </h4>
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <i class="fas fa-history"></i>
+                            <h3>10+ лет опыта</h3>
+                            <p>Более десяти лет успешной работы на рынке</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-map"></i>
+                            <h3>Работаем по всей СНГ</h3>
+                            <p>Обслуживаем клиентов во всех регионах</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-file-alt"></i>
+                            <h3>Полный пакет документации</h3>
+                            <p>Предоставляем все необходимые документы</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="testimonials">
+                <div class="container">
+                    <h2 class="testimonials_title">Отзывы клиентов</h2>
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+                                    <p class="quote">
+                                        “Наша лаборатория давно искала надёжного партнёра по
+                                        обслуживанию оборудования. После первого обращения в
+                                        <span>ProTechService</span> мы сразу поняли — это
+                                        профессионалы. Провели полную диагностику, устранили сбои и
+                                        всё подробно задокументировали. Работа выполнена строго по
+                                        регламенту.
+                                    </p>
+                                    <h4 class="author">Наталья<span>(заведующая лабораторией)</span></h4>
+                                    <span class="position">Алматы</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+                                    <p class="quote">
+                                        “Обратились по поводу пуско-наладки нового импортного
+                                        анализатора. Команда приехала быстро, провела настройку,
+                                        калибровку и обучила персонал. Было приятно видеть такой
+                                        уровень сервиса и подхода. Документы и сертификаты
+                                        предоставили сразу.”
+                                    </p>
+                                    <h4 class="author">Ермек<span>(инженер-технолог)</span> </h4>
+                                    <span class="position">Астана</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+                                    <p class="quote">
+                                        У нас произошёл сбой в работе оборудования, и производитель
+                                        предлагал замену целого блока. Но специалисты
+                                        <span>ProTechService</span>
+                                        выявили и устранили проблему без лишних затрат. Сэкономили
+                                        лаборатории сотни тысяч тенге. Спасибо за честность и
+                                        профессионализм!”
+                                    </p>
+                                    <h4 class="author">Алия<span>(главный лаборант)</span></h4>
+                                    <span class="position">Шымкент</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+                                    <p class="quote">
+                                        “<span>ProTechService</span> взяли на себя регулярное обслуживание всей
+                                        нашей лаборатории. С тех пор забыли, что такое срочные
+                                        поломки. Всё чётко по графику, оборудование всегда работает
+                                        как часы. Это тот уровень сервиса, к которому хочется
+                                        возвращаться.”
+                                    </p>
+                                    <h4 class="author">Тимур<span>(заведующий отделом)</span> </h4>
+                                    <span class="position">Караганда</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+                                    <p class="quote">
+                                        “Мы обслуживаем сложное оборудование и раньше часто сталкивались с дилетантами. С <span>ProTechService</span> всё иначе: техническая экспертиза на высоте, чёткий контроль качества и гарантия после каждого визита. Лучший сервис, с которым доводилось работать.”
+                                    </p>
+                                    <h4 class="author">Жанна<span>(специалист по качеству)</span></h4>
+                                    <span class="position">Усть-Каменогорск</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- If we need navigation buttons -->
+                        <!-- <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div> -->
+
+                        <!-- If we need scrollbar -->
+                        <!-- <div class="swiper-scrollbar"></div> -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq" id="faq">
+                <div class="container">
+                    <h2>Часто задаваемые вопросы</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Как быстро вы сможете приступить к работе?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>
+                                    Мы стараемся реагировать на заявки в течение 24 часов. В
+                                    экстренных случаях можем организовать выезд специалиста в день
+                                    обращения.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Предоставляете ли вы гарантию на работы?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>
+                                    Да, мы предоставляем гарантию на все виды работ сроком от 6
+                                    месяцев до 1 года, в зависимости от типа оборудования и
+                                    проведенных работ.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Работаете ли вы с оборудованием других производителей?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>
+                                    Да, наши специалисты имеют опыт работы с оборудованием различных
+                                    производителей. Мы постоянно обучаемся и следим за новинками
+                                    рынка.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Возможен ли выезд в другие регионы?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>
+                                    Да, мы работаем по всей России и странам СНГ. Условия выезда
+                                    обсуждаются индивидуально в зависимости от региона и объема
+                                    работ.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contacts" class="contacts">
+                <div class="container">
+                    <h2>Контакты</h2>
+                    <div class="contacts-grid">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="https://wa.me/77752512646">+7 (775) 251 26 46</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@protechservice.kz">info@protechservice.kz</a>
+                            </div>
+                            <div class="social-links">
+                                <a href="https://wa.me/77752512646" class="social-link"
+                                    ><i class="fab fa-whatsapp"></i
+                                ></a>
+                                <a
+                                    href="https://www.instagram.com/protechservice.kz/"
+                                    class="social-link"
+                                    ><i class="fab fa-instagram"></i
+                                ></a>
+                                <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                            </div>
+                        </div>
+                        <form id="contactForm" class="contact-form">
+                            <input type="text" placeholder="Ваше имя" required />
+                            <input type="tel" placeholder="Телефон" required />
+                            <textarea placeholder="Сообщение" required></textarea>
+                            <button type="submit" class="btn primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 ProTechService. Все права защищены.</p>
+                <div class="copy-dev">
+                    <a href="https://wa.me/7775844442"
+                        >Разработана с ♡ <img src="./img/logo-beka.svg" alt=""
+                    /></a>
+                </div>
+            </div>
+        </footer>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Оставить заявку</h2>
+                <form id="requestForm" action="send.php" method="post">
+                    <input type="text" placeholder="Ваше имя" required />
+                    <input type="tel" placeholder="Телефон" required />
+                    <textarea placeholder="Опишите проблему" required></textarea>
+                    <button type="submit" class="btn primary">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+        <div class="thanks">
+            <h1>Спасибо за вашу заявку!</h1>
+            <p>Мы свяжемся с вами в ближайшее время.</p>
+            <a href="/" class="btn">Вернуться на главную</a>
+          </div>
+        <button id="toTopBtn" class="to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+
+        <script type="module" src="./js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </body>
+</html>
