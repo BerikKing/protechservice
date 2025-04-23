@@ -126,7 +126,7 @@ body.menu-open {
 .hero {
     margin-top: 65px;
     padding: calc(var(--spacing-lg) * 2) 0 var(--spacing-lg);
-    background: linear-gradient(rgba(45, 48, 56, 0.9), rgba(1, 5, 48, 0.9)),
+    background: linear-gradient(rgba(45, 48, 56, 0.8), rgba(1, 5, 48, 0.8)),
         url('../img/main-bg.webp');
     background-size: cover;
     background-position: center;
@@ -156,7 +156,10 @@ body.menu-open {
     gap: var(--spacing-sm);
     justify-content: center;
 }
-
+.hero-buttons button a {
+    text-decoration: none;
+    color: white;
+}
 /* Buttons */
 .btn {
     padding: 0.8em 1.6em;
@@ -332,6 +335,17 @@ section h2 {
     padding: var(--spacing-sm);
     border: 1px solid #eee;
     border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+.brand.hidden {
+    display: none;
+}
+
+.show-more-brands {
+    margin-top: var(--spacing-md);
+    /* width: 100%; */
+    cursor: pointer;
+    text-align: center;
 }
 .brand img {
     width: 100%;

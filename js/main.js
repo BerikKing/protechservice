@@ -27,7 +27,19 @@ navLinks.querySelectorAll('a').forEach((link) => {
         body.classList.remove('menu-open');
     });
 });
+// Show more brands functionality
+const showMoreBrandsBtn = document.querySelector('.show-more-brands');
+const hiddenBrands = document.querySelectorAll('.brand.hidden');
+let brandsVisible = false;
 
+showMoreBrandsBtn.addEventListener('click', () => {
+  hiddenBrands.forEach(brand => {
+    brand.classList.toggle('hidden');
+  });
+  
+  brandsVisible = !brandsVisible;
+  showMoreBrandsBtn.textContent = brandsVisible ? 'Показать меньше' : 'Показать больше';
+});
 // Modal functionality
 // const modal = document.getElementById('modal');
 const requestBtn = document.getElementById('requestBtn');
