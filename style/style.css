@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #0066cc;
-    --primary-dark: #004c99;
+    --primary-color: #5e6263;
+    --primary-dark: #272a32;
     --secondary-color: #666666;
     --background-color: #ffffff;
     --text-color: #333333;
@@ -126,7 +126,7 @@ body.menu-open {
 .hero {
     margin-top: 65px;
     padding: calc(var(--spacing-lg) * 2) 0 var(--spacing-lg);
-    background: linear-gradient(rgba(0, 102, 204, 0.9), rgba(0, 76, 153, 0.9)),
+    background: linear-gradient(rgba(45, 48, 56, 0.9), rgba(1, 5, 48, 0.9)),
         url('../img/main-bg.webp');
     background-size: cover;
     background-position: center;
