@@ -25,7 +25,15 @@ ProtechService — это адаптивный лендинг с формой з
 
 ## 📁 Структура проекта
 
-├── index.html ├── style.css ├── send.php ├── PHPMailer/ │ ├── PHPMailer.php │ ├── SMTP.php │ └── Exception.php └── README.md
+├── index.html  
+├── style.css  
+├── send.php  
+├── PHPMailer/  
+│   ├── PHPMailer.php  
+│   ├── SMTP.php  
+│   └── Exception.php  
+└── README.md
+
 ## 🛠 Настройка
 
 1. Установить [PHPMailer](https://github.com/PHPMailer/PHPMailer)
