@@ -58,40 +58,7 @@ window.addEventListener('click', (event) => {
         modal.style.display = 'none';
     }
 });
-
-// Form submissions
-// const contactForm = document.getElementById('contactForm');
-// const requestForm = document.getElementById('requestForm');
-
-// contactForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     // Here you would typically send the form data to your server
-//     alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
-//     contactForm.reset();
-// });
-
-// requestForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     // Here you would typically send the form data to your server
-//     alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
-//     requestForm.reset();
-//     modal.style.display = 'none';
-// });
-
-// // Smooth scrolling for navigation links
-// document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-//     anchor.addEventListener('click', function (e) {
-//         const href = this.getAttribute('href');
-
-//         if (href === '#' || href === '') return; // игнорируем пустые якоря
-
-//         e.preventDefault();
-//         const target = document.querySelector(href);
-//         if (target) {
-//             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-//         }
-//     });
-// });
+// Form submission functionality
 const forms = ['requestForm', 'contactForm'];
 const thankYouModal = document.getElementById('thankYouModal');
 const modal = document.getElementById('modal');
@@ -138,13 +105,14 @@ forms.forEach((formId) => {
         }
     });
 });
+
 const phoneInputs = document.querySelectorAll('input[name="phone"]');
 
-  phoneInputs.forEach(input => {
+phoneInputs.forEach((input) => {
     IMask(input, {
-      mask: '+{7} (000) 000-00-00'
+        mask: '+{7} (000) 000-00-00',
     });
-  });
+});
 // Закрытие модального окна "Спасибо"
 document.addEventListener('click', function (e) {
     if (

@@ -7,12 +7,15 @@ require 'PHPMailer/src/SMTP.php';
 require 'PHPMailer/src/Exception.php';
 
 header('Content-Type: application/json');
-
+if (empty($name) || empty($phone) || empty($message)) {
+    echo json_encode(['status' => 'error', 'message' => 'Все поля обязательны.']);
+    exit;
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars($_POST['name'] ?? '');
     $phone = htmlspecialchars($_POST['phone'] ?? '');
     $message = htmlspecialchars($_POST['message'] ?? '');
-
+    error_log("Name: $name, Phone: $phone, Message: $message");
     if (!$name || !$phone || !$message) {
         echo json_encode(['status' => 'error', 'message' => 'Все поля обязательны.']);
         exit;
@@ -29,7 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Password = 'E5?913ddk';  // ваш пароль от почты
         $mail->SMTPSecure = "tls";
         $mail->Port = 587;
-
         $mail->setFrom('info@protechservice.kz', 'protethservice.kz Support');
         $mail->addAddress('berloo24@gmail.com'); // куда отправлять
         $mail->isHTML(true);
