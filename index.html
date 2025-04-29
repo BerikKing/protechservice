@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ProTechService - Сервис лабораторного оборудования</title>
-        <link rel="shortcut icon" href="./img/icons/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="./img/icons/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="./style/style.css" />
         <link
             rel="stylesheet"
@@ -47,7 +47,9 @@
                     </p>
                     <div class="hero-buttons">
                         <button class="btn primary" id="requestBtn">Оставить заявку</button>
-                        <button class="btn secondary" id="learnMoreBtn"><a href="https://wa.me/77752512646" target="_blank">Узнать больше</a></button>
+                        <button class="btn secondary" id="learnMoreBtn">
+                            <a href="https://wa.me/77752512646" target="_blank">Узнать больше</a>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -393,9 +395,9 @@
                             </div>
                             <div class="faq-answer">
                                 <p>
-                                    Да, мы работаем по всему Казахстану и странам СНГ. Условия выезда
-                                    обсуждаются индивидуально в зависимости от региона и объема
-                                    работ.
+                                    Да, мы работаем по всему Казахстану и странам СНГ. Условия
+                                    выезда обсуждаются индивидуально в зависимости от региона и
+                                    объема работ.
                                 </p>
                             </div>
                         </div>
@@ -427,10 +429,10 @@
                                 <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
                             </div>
                         </div>
-                        <form id="contactForm" class="contact-form">
-                            <input type="text" placeholder="Ваше имя" required />
-                            <input type="tel" placeholder="Телефон" required />
-                            <textarea placeholder="Сообщение" required></textarea>
+                        <form id="contactForm" class="contact-form" action="send.php" method="post">
+                            <input type="text" name="name" placeholder="Ваше имя" required />
+                            <input type="tel" name="phone" placeholder="Телефон" required />
+                            <textarea name="message" placeholder="Сообщение" required></textarea>
                             <button type="submit" class="btn primary">Отправить</button>
                         </form>
                     </div>
@@ -454,23 +456,26 @@
                 <span class="close">&times;</span>
                 <h2>Оставить заявку</h2>
                 <form id="requestForm" action="send.php" method="post">
-                    <input type="text" placeholder="Ваше имя" required />
-                    <input type="tel" placeholder="Телефон" required />
-                    <textarea placeholder="Опишите проблему" required></textarea>
+                    <input type="text" name="name" placeholder="Ваше имя" required />
+                    <input type="tel" name="phone" placeholder="+7 (700) 123-45-67" required />
+                    <textarea name="message" placeholder="Опишите проблему" required></textarea>
                     <button type="submit" class="btn primary">Отправить заявку</button>
                 </form>
             </div>
         </div>
-        <!-- <div class="thanks">
-            <h1>Спасибо за вашу заявку!</h1>
-            <p>Мы свяжемся с вами в ближайшее время.</p>
-            <a href="/" class="btn">Вернуться на главную</a>
-        </div> -->
         <button id="toTopBtn" class="to-top">
             <i class="fas fa-chevron-up"></i>
         </button>
+        <div id="thankYouModal" class="modal" style="display: none">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Спасибо за вашу заявку!</h2>
+                <p style="text-align: center">Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+        </div>
 
         <script type="module" src="./js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/imask"></script>
     </body>
 </html>

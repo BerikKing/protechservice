@@ -33,12 +33,12 @@ const hiddenBrands = document.querySelectorAll('.brand.hidden');
 let brandsVisible = false;
 
 showMoreBrandsBtn.addEventListener('click', () => {
-  hiddenBrands.forEach(brand => {
-    brand.classList.toggle('hidden');
-  });
-  
-  brandsVisible = !brandsVisible;
-  showMoreBrandsBtn.textContent = brandsVisible ? 'Показать меньше' : 'Показать больше';
+    hiddenBrands.forEach((brand) => {
+        brand.classList.toggle('hidden');
+    });
+
+    brandsVisible = !brandsVisible;
+    showMoreBrandsBtn.textContent = brandsVisible ? 'Показать меньше' : 'Показать больше';
 });
 // Modal functionality
 // const modal = document.getElementById('modal');
@@ -92,40 +92,68 @@ window.addEventListener('click', (event) => {
 //         }
 //     });
 // });
-const requestForm = document.getElementById('requestForm');
+const forms = ['requestForm', 'contactForm'];
+const thankYouModal = document.getElementById('thankYouModal');
 const modal = document.getElementById('modal');
 
-requestForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
+forms.forEach((formId) => {
+    const form = document.getElementById(formId);
+    if (!form) return;
 
-  const formData = new FormData(requestForm);
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-  try {
-    const response = await fetch('send.php', {
-      method: 'POST',
-      body: formData
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        // Блокируем кнопку, чтобы не кликали много раз
+        submitButton.disabled = true;
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Отправка...';
+
+        try {
+            const response = await fetch('send.php', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (result.status === 'success') {
+                form.reset();
+                thankYouModal.style.display = 'block';
+
+                if (formId === 'requestForm') {
+                    modal.style.display = 'none';
+                }
+            } else {
+                alert('Ошибка: ' + result.message);
+            }
+        } catch (error) {
+            alert('Произошла ошибка при отправке формы.');
+        } finally {
+            // Возвращаем кнопку в исходное состояние
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+        }
     });
-
-    const result = await response.json();
-
-    if (result.status === 'success') {
-      document.querySelector('.modal-content').innerHTML = `
-        <h2>Спасибо!</h2>
-        <p>Ваша заявка успешно отправлена.<br>Мы свяжемся с вами в ближайшее время.</p>
-        <button class="btn close-modal">Закрыть</button>
-      `;
-    } else {
-      alert('Ошибка: ' + result.message);
-    }
-  } catch (error) {
-    alert('Произошла ошибка при отправке формы.');
-  }
 });
+const phoneInputs = document.querySelectorAll('input[name="phone"]');
 
+  phoneInputs.forEach(input => {
+    IMask(input, {
+      mask: '+{7} (000) 000-00-00'
+    });
+  });
+// Закрытие модального окна "Спасибо"
 document.addEventListener('click', function (e) {
-  if (e.target.classList.contains('close-modal') || e.target.classList.contains('close')) {
-    modal.style.display = 'none';
-  }
+    if (
+        e.target.classList.contains('close') ||
+        e.target.classList.contains('close-modal') ||
+        e.target === thankYouModal
+    ) {
+        thankYouModal.style.display = 'none';
+    }
 });
 
 // Header scroll effect
