@@ -7,15 +7,12 @@ require 'PHPMailer/src/SMTP.php';
 require 'PHPMailer/src/Exception.php';
 
 header('Content-Type: application/json');
-if (empty($name) || empty($phone) || empty($message)) {
-    echo json_encode(['status' => 'error', 'message' => 'Все поля обязательны.']);
-    exit;
-}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars($_POST['name'] ?? '');
     $phone = htmlspecialchars($_POST['phone'] ?? '');
     $message = htmlspecialchars($_POST['message'] ?? '');
-    error_log("Name: $name, Phone: $phone, Message: $message");
+
     if (!$name || !$phone || !$message) {
         echo json_encode(['status' => 'error', 'message' => 'Все поля обязательны.']);
         exit;
@@ -26,14 +23,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Настройки SMTP
         $mail->isSMTP();
-        $mail->Host = 'mail.protechservice.kz'; // SMTP сервер ps.kz
+        $mail->Host = 'smtp.gmail.com'; // SMTP сервер ps.kz
         $mail->SMTPAuth = true;
-        $mail->Username = 'info@protechservice.kz'; // ваш email на ps.kz
-        $mail->Password = 'E5?913ddk';  // ваш пароль от почты
-        $mail->SMTPSecure = "tls";
-        $mail->Port = 587;
-        $mail->setFrom('info@protechservice.kz', 'protethservice.kz Support');
-        $mail->addAddress('berloo24@gmail.com'); // куда отправлять
+        $mail->Username = 'berloo24@gmail.com'; // ваш email на ps.kz
+        $mail->Password = 'zvjj auwv bvoc bkva';  // ваш пароль от почты
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;
+
+        $mail->setFrom('berloo24@gmail.com', 'protethservice.kz Support');
+        $mail->addAddress('protechsrvc@gmail.com'); // куда отправлять
         $mail->isHTML(true);
         $mail->Subject = 'New messege from site protethservice.kz';
         $mail->Body = "
