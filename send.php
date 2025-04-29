@@ -23,15 +23,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Настройки SMTP
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; // SMTP сервер ps.kz
+        $mail->Host = 'mail.protechservice.kz'; // SMTP сервер ps.kz
         $mail->SMTPAuth = true;
-        $mail->Username = 'berloo24@gmail.com'; // ваш email на ps.kz
-        $mail->Password = 'zvjj auwv bvoc bkva';  // ваш пароль от почты
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port = 465;
+        $mail->Username = 'info@protechservice.kz'; // ваш email на ps.kz
+        $mail->Password = 'E5?913ddk';  // ваш пароль от почты
+        $mail->SMTPSecure = "tls";
+        $mail->Port = 587;
 
-        $mail->setFrom('berloo24@gmail.com', 'protethservice.kz Support');
-        $mail->addAddress('protechsrvc@gmail.com'); // куда отправлять
+        $mail->setFrom('info@protechservice.kz', 'protethservice.kz Support');
+        $mail->addAddress('berloo24@gmail.com'); // куда отправлять
         $mail->isHTML(true);
         $mail->Subject = 'New messege from site protethservice.kz';
         $mail->Body = "
