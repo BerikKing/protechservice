@@ -23,14 +23,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Настройки SMTP
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; // SMTP сервер ps.kz
+        $mail->Host = 'mail.protechservice.kz'; // SMTP сервер ps.kz
         $mail->SMTPAuth = true;
-        $mail->Username = 'berloo24@gmail.com'; // ваш email на ps.kz
-        $mail->Password = 'zvjj auwv bvoc bkva';  // ваш пароль от почты
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port = 465;
+        $mail->Username = 'no-reply@protechservice.kz'; // ваш email на ps.kz
+        $mail->Password = '92Up#60pm';  // ваш пароль от почты
+        $mail->SMTPSecure = 'ssl'; // Используйте 'tls' если у вас 587 порт
+        $mail->SMTPAutoTLS = false; // Отключаем автоматическое шифрование
+        $mail->SMTPDebug = 0; // 0 - отключить отладку, 1 - включить отладку
+        $mail->Debugoutput = 'html'; // Вывод отладки в HTML формате
+        $mail->CharSet = 'UTF-8'; // Кодировка
+        $mail->setLanguage('ru', 'PHPMailer/language/'); // Устанавливаем язык для ошибок
+        $mail->isHTML(true); // Устанавливаем формат письма в HTML
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+        $mail->Port = 465; // Порт для SSL
 
-        $mail->setFrom('berloo24@gmail.com', 'protethservice.kz Support');
+        $mail->setFrom('no-reply@protechservice.kz', 'protechservice.kz Support');
+        $mail->addReplyTo('protechsrvc@gmail.com', 'ProtechService');
         $mail->addAddress('protechsrvc@gmail.com'); // куда отправлять
         $mail->isHTML(true);
         $mail->Subject = 'New messege from site protethservice.kz';
